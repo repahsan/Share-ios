@@ -8,15 +8,11 @@
 
 import UIKit
 import Firebase
-import FirebaseDatabase
 class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       // var ref: DatabaseReference!
-        
-       // ref = Database.database().reference(fromURL: "Argument labels '(_:)' do not match any available overloads")
-       // ref.updateChildValues(["Somevalues":123123])
+       
       
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
     }

@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class LoginController: UIViewController {
+    
     
     let inputContainerView: UIView = {
         let view = UIView()
@@ -30,7 +34,26 @@ class LoginController: UIViewController {
     }()
     
     @objc func handleRegister(){
-        print(123)
+        var ref: DatabaseReference!
+        guard let email = emailTextField.text,let password = passwordTextField.text,let name = nameTextField.text else{
+            print("Form not valid")
+            return
+        }
+        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+            guard (authResult?.user) != nil else { return }
+            ref = Database.database().reference(fromURL: "https://share-a8ca4.firebaseio.com/")
+            let usersReference = ref.child("users")
+            let values = ["name": name,"password": password]
+            usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+
+                if error != nil {
+                    print(err)
+                    return
+                }
+                print("User success saved")
+            })
+            
+        }
     }
     
     let nameTextField: UITextField = {
