@@ -9,7 +9,8 @@ target 'Share' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
-
+  pod 'GoogleMaps'
+	
   target 'ShareTests' do
     inherit! :search_paths
     # Pods for testing
