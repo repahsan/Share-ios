@@ -9,22 +9,35 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
-class ViewController: UITableViewController {
+import GoogleMaps
 
+class ViewController: UIViewController {
+
+    var googleApiKey = "AIzaSyCp0xOx8p6ROiquRXqT53038ujLHbdRMRw"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        // var ref: DatabaseReference!
         
        // ref = Database.database().reference(fromURL: "Argument labels '(_:)' do not match any available overloads")
        // ref.updateChildValues(["Somevalues":123123])
-      
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
-        
+
+       
         // User not logged in
         if Auth.auth().currentUser?.uid == nil {
             perform(#selector(handleLogout), with: nil, afterDelay: 0)
-           
+            
         }
+        
+        
+        //Homepage
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Maps", style: .plain, target: self, action: #selector(handleMaps))
+        
+       
+    
+        
     }
     
     @objc func handleLogout(){
@@ -39,6 +52,11 @@ class ViewController: UITableViewController {
         present(loginController, animated: true,completion:nil)
     }
 
-
+    
+    @objc func handleMaps() {
+        let mapController = MapController()
+        present(mapController, animated: true, completion: nil)
+        
+    }
 }
 
