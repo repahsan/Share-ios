@@ -8,11 +8,15 @@
 
 import UIKit
 import Firebase
+import GoogleMaps
+import GooglePlaces
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    var googleApiKey = "AIzaSyCp0xOx8p6ROiquRXqT53038ujLHbdRMRw"
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -21,6 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.rootViewController = UINavigationController(rootViewController: ViewController())
+        
+        //Google Maps
+        GMSServices.provideAPIKey("AIzaSyCp0xOx8p6ROiquRXqT53038ujLHbdRMRw")
+        GMSPlacesClient.provideAPIKey("AIzaSyCp0xOx8p6ROiquRXqT53038ujLHbdRMRw")
         
         return true
     }

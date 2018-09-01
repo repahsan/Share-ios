@@ -44,6 +44,8 @@ PODS:
   - GoogleMaps/Base (2.7.0)
   - GoogleMaps/Maps (2.7.0):
     - GoogleMaps/Base
+  - GooglePlaces (2.7.0):
+    - GoogleMaps/Base (= 2.7.0)
   - GoogleUtilities/AppDelegateSwizzler (5.2.2):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -67,12 +69,15 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
   - GoogleMaps
+  - GooglePlaces
+  - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -85,10 +90,12 @@ SPEC REPOS:
     - FirebaseInstanceID
     - GoogleAppMeasurement
     - GoogleMaps
+    - GooglePlaces
     - GoogleUtilities
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Firebase: 75ea9e232eefa158c1049028030b8f661a2ccb62
@@ -100,11 +107,13 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: ea5af6920d0a4a29b40459d055bebe4a6c1333c4
   GoogleAppMeasurement: f7507b39b70ad0bd80b3d81518b2f43868974307
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
+  GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
   GoogleUtilities: 06b66f9567769a7958db20a92f0128b2843e49d5
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 041da842ac550084a596e089f3cd56e515278f02
+PODFILE CHECKSUM: 677517a0d38f96325d81d8082ed6b4126ce46e72
 
 COCOAPODS: 1.5.3
