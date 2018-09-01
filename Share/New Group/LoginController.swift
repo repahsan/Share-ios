@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+
 class LoginController: UIViewController {
     
     let inputContainerView: UIView = {
@@ -19,15 +20,7 @@ class LoginController: UIViewController {
         return view
     }()
     
-    lazy var loginRegisterButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.backgroundColor = UIColor(r: 80,g: 101,b: 161)
-        button.setTitle("Register", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.addTarget(self, action: #selector(handleLoginRegister), for: .touchUpInside)
-        return button
-    }()
+    
     
     @objc func handleLoginRegister(){
         if loginRegisterSegmentedControl.selectedSegmentIndex == 0 {
@@ -89,7 +82,15 @@ class LoginController: UIViewController {
                                 })
         })
     }
-    
+    lazy var loginRegisterButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = UIColor(r: 80,g: 101,b: 161)
+        button.setTitle("Register", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.addTarget(self, action: #selector(handleLoginRegister), for: .touchUpInside)
+        return button
+    }()
     
     let nameTextField: UITextField = {
         let tf = UITextField()

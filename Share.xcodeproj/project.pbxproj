@@ -15,7 +15,7 @@
 		400FBADC21299D4C00200EAA /* ShareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400FBADB21299D4C00200EAA /* ShareTests.swift */; };
 		400FBAE721299D4C00200EAA /* ShareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400FBAE621299D4C00200EAA /* ShareUITests.swift */; };
 		4081659B2132A33700735149 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4081659A2132A33700735149 /* LoginController.swift */; };
-		40DBBC36213A8D4400B9EAA8 /* google-services.json in Resources */ = {isa = PBXBuildFile; fileRef = 40DBBC35213A8D4400B9EAA8 /* google-services.json */; };
+		40DBBC3A213AA23F00B9EAA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 40DBBC39213AA23F00B9EAA8 /* GoogleService-Info.plist */; };
 		49E555FD27D092C73F31AB01 /* Pods_ShareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C10A28280730FE2276167FBF /* Pods_ShareTests.framework */; };
 		5A7191202DE8C0B8DD9A4ED3 /* Pods_ShareUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F998E58D8B076A81FDFA55 /* Pods_ShareUITests.framework */; };
 		CDFE0555D3AEEFA4842FAB99 /* Pods_Share.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1F66EC9B7FBFDD429B2529 /* Pods_Share.framework */; };
@@ -54,7 +54,7 @@
 		400FBAE621299D4C00200EAA /* ShareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareUITests.swift; sourceTree = "<group>"; };
 		400FBAE821299D4C00200EAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4081659A2132A33700735149 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		40DBBC35213A8D4400B9EAA8 /* google-services.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "google-services.json"; sourceTree = "<group>"; };
+		40DBBC39213AA23F00B9EAA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4C1F66EC9B7FBFDD429B2529 /* Pods_Share.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D26BBA75A49161E658EBA5B /* Pods-ShareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShareTests/Pods-ShareTests.debug.xcconfig"; sourceTree = "<group>"; };
 		501AEFA7430D8AAA588AB94A /* Pods-ShareUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShareUITests/Pods-ShareUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 				400FBACD21299D4C00200EAA /* Assets.xcassets */,
 				400FBACF21299D4C00200EAA /* LaunchScreen.storyboard */,
 				400FBAD221299D4C00200EAA /* Info.plist */,
-				40DBBC35213A8D4400B9EAA8 /* google-services.json */,
+				40DBBC39213AA23F00B9EAA8 /* GoogleService-Info.plist */,
 			);
 			path = Share;
 			sourceTree = "<group>";
@@ -289,8 +289,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				400FBAD121299D4C00200EAA /* LaunchScreen.storyboard in Resources */,
+				40DBBC3A213AA23F00B9EAA8 /* GoogleService-Info.plist in Resources */,
 				400FBACE21299D4C00200EAA /* Assets.xcassets in Resources */,
-				40DBBC36213A8D4400B9EAA8 /* google-services.json in Resources */,
 				400FBACC21299D4900200EAA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
