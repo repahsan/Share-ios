@@ -65,7 +65,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                 print(error?.localizedDescription as Any)
                 return
             }
-            
             let ref = Database.database().reference(fromURL: "https://share-a8ca4.firebaseio.com/")
             let values = ["Fname": Fname, "Lname": Lname, "Gender": Gender, "Contact Number": Contact,"Emergency Contract": EmergencyContact]
             let uid = Auth.auth().currentUser?.uid
@@ -74,7 +73,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                     print(err?.localizedDescription as Any)
                     return
                 }
-                
+                Auth.auth().currentUser?.sendEmailVerification(completion: {(error) in
+                    if error != nil {
+                        print(error?.localizedDescription as Any)
+                        return
+                    }
+                })
             })
         })
         
