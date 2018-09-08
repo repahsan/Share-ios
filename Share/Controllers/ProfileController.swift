@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ProfileController: UIViewController {
     
@@ -26,5 +27,14 @@ class ProfileController: UIViewController {
     @IBAction func MapsAction(_ sender: UIButton) {
     
             self.performSegue(withIdentifier: "MapsSegue", sender: self)
+    }
+    @IBAction func signOutAction(_ sender: UIButton) {
+        do {
+            try Auth.auth().signOut()
+            self.performSegue(withIdentifier: "LogoutSegue", sender: self)
+        } catch let err {
+            print(err)
+        }
+        
     }
 }
