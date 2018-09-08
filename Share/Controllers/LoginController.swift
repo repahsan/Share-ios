@@ -13,6 +13,7 @@ class LoginController: UIViewController {
     @IBOutlet weak var EmailTxtField: UITextField!
     @IBOutlet weak var PasswordTxtField: UITextField!
     
+    @IBOutlet weak var emailReset: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,6 +38,17 @@ class LoginController: UIViewController {
                 return
             }
             self.performSegue(withIdentifier: "ProfileSegue", sender: self)
+        })
+    }
+    @IBAction func ResetPasswordAction(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "resetPasswordSegue", sender: self)
+    }
+    @IBAction func resetPassword(_ sender: UIButton) {
+        Auth.auth().sendPasswordReset(withEmail: emailReset.text!, completion: {(error) in
+            if error != nil{
+                print(error?.localizedDescription as Any)
+                return
+            }
         })
     }
     
