@@ -6,12 +6,14 @@ target 'Share' do
   use_frameworks!
 
   # Pods for Share
+  pod 'Firebase'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'SwiftyJSON'
+  pod 'Alamofire'
 
   target 'ShareTests' do
     inherit! :search_paths

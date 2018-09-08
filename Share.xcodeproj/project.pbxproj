@@ -20,6 +20,7 @@
 		40FB4640213EDD11006490C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 40FB463F213EDD11006490C7 /* GoogleService-Info.plist */; };
 		64511B0F7E729CCB26D912D8 /* Pods_ShareUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A76A397D744CE3E1E0178B6E /* Pods_ShareUITests.framework */; };
 		8739DC5A651DA0966CE571E4 /* Pods_ShareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C04644DDA338C778461DC0E0 /* Pods_ShareTests.framework */; };
+		893CFE932142CBE800B8B792 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CFE922142CBE800B8B792 /* MapsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		40FB463F213EDD11006490C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		703AC359DC4D9302D8867B88 /* Pods-ShareUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShareUITests/Pods-ShareUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		834194A23147F934DFFF282E /* Pods-ShareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShareTests/Pods-ShareTests.release.xcconfig"; sourceTree = "<group>"; };
+		893CFE922142CBE800B8B792 /* MapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
 		A76A397D744CE3E1E0178B6E /* Pods_ShareUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShareUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA0CE68F6D4E4A36D3542AA /* Pods-ShareUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShareUITests/Pods-ShareUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C04644DDA338C778461DC0E0 /* Pods_ShareTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShareTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +116,7 @@
 				40FB4613213EDCA7006490C7 /* ViewController.swift */,
 				40E9AB682141734F001F662C /* LoginController.swift */,
 				40A4C43D2142210000F398BE /* ProfileController.swift */,
+				893CFE922142CBE800B8B792 /* MapsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Share/Pods-Share-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -348,6 +352,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -422,6 +427,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				893CFE932142CBE800B8B792 /* MapsViewController.swift in Sources */,
 				40FB4614213EDCA7006490C7 /* ViewController.swift in Sources */,
 				40E9AB692141734F001F662C /* LoginController.swift in Sources */,
 				40FB4612213EDCA7006490C7 /* AppDelegate.swift in Sources */,
