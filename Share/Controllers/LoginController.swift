@@ -34,7 +34,8 @@ class LoginController: UIViewController {
         Auth.auth().signIn(withEmail: email, password: password, completion: {(user,error) in
             
             if error != nil{
-                print(error?.localizedDescription as Any)
+                self.createAlert(title: "Wrong Email or Password", message: error?.localizedDescription as Any as! String)
+                self.PasswordTxtField.text = ""
                 return
             }
             self.performSegue(withIdentifier: "ProfileSegue", sender: self)
@@ -50,6 +51,13 @@ class LoginController: UIViewController {
                 return
             }
         })
+    }
+    func createAlert(title:String,message:String)
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let subButton = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+        alert.addAction(subButton)
+        self.present(alert, animated: true, completion: nil)
     }
     
     /*

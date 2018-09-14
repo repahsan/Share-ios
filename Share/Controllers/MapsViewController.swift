@@ -41,7 +41,7 @@ class MapsViewController: UIViewController , GMSMapViewDelegate , CLLocationMana
         
         //Map initiation Code
         
-        let camera = GMSCameraPosition.camera(withLatitude: -7.9293122, longitude: 112.5879156, zoom: 15.0)
+        let camera = GMSCameraPosition.camera(withLatitude: 10.3540762, longitude: 123.9115758, zoom: 15.0)
         
         self.googleMaps.camera = camera
         self.googleMaps.delegate = self
