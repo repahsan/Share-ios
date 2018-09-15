@@ -83,16 +83,17 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                 let ref = Database.database().reference(fromURL: "https://share-a8ca4.firebaseio.com/")
                 let values = ["Fname": Fname, "Lname": Lname, "Gender": Gender, "Contact Number": Contact,"Emergency Contract": EmergencyContact,"Pin":0] as [String : Any]
                 let uid = Auth.auth().currentUser?.uid
+                Auth.auth().currentUser?.sendEmailVerification(completion: {(error) in
+                    if error != nil {
+                        print(error?.localizedDescription as Any)
+                        return
+                    }
                 ref.child("users").child(uid!).setValue(values, withCompletionBlock: {(err,ref) in
                     if err != nil{
                         print(err?.localizedDescription as Any)
                         return
                     }
-                    Auth.auth().currentUser?.sendEmailVerification(completion: {(error) in
-                        if error != nil {
-                            print(error?.localizedDescription as Any)
-                            return
-                        }
+                        self.performSegue(withIdentifier: "LoginSegue", sender: self)
                     })
                 })
             })

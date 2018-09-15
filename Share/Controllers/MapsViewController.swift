@@ -11,6 +11,7 @@ import GoogleMaps
 import GooglePlaces
 import SwiftyJSON
 import Alamofire
+import Firebase
 
 enum Location{
     case startLocation
@@ -55,7 +56,7 @@ class MapsViewController: UIViewController , GMSMapViewDelegate , CLLocationMana
     //Create Marker Pin on map function
     
     func createMarker(titleMarker : String, iconMarker: UIImage, latitude: CLLocationDegrees, longitude: CLLocationDegrees){
-       
+        
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         marker.title = titleMarker
@@ -73,7 +74,7 @@ class MapsViewController: UIViewController , GMSMapViewDelegate , CLLocationMana
         
         let location = locations.last
         
-        let locationTarget = CLLocation(latitude: 37.784023631590777, longitude: -122.4048661461333)
+        let locationTarget = CLLocation(latitude: 10.3540762, longitude: 123.9115758)
         
         createMarker(titleMarker: "Destination Location", iconMarker: #imageLiteral(resourceName: "mapspin"), latitude: locationTarget.coordinate.latitude, longitude: locationTarget.coordinate.longitude)
         
@@ -117,10 +118,9 @@ class MapsViewController: UIViewController , GMSMapViewDelegate , CLLocationMana
     
     //Create route path from start to destination
     
-    func drawPath(startLocation: CLLocation, endLocation: CLLocation){
-        
-        let origin = "\(startLocation.coordinate.latitude), \(startLocation.coordinate.longitude)"
-        
+    func drawPath(startLocation: CLLocation, endLocation: CLLocation)
+    {
+        let origin = "\(startLocation.coordinate.latitude),\(startLocation.coordinate.longitude)"
         let destination = "\(endLocation.coordinate.latitude),\(endLocation.coordinate.longitude)"
         
         
@@ -128,28 +128,24 @@ class MapsViewController: UIViewController , GMSMapViewDelegate , CLLocationMana
         
         Alamofire.request(url).responseJSON { response in
             
-            print(response.request as Any) // Orig URL request
-            
+            print(response.request as Any)  // original URL request
             print(response.response as Any) // HTTP URL response
-            
-            print(response.data as Any) // Server data
-            
-            print(response.result as Any) // Result of Response Serialization
-            
-            
+            print(response.data as Any)     // server data
+            print(response.result as Any)   // result of response serialization
             
             do{
                 let json = try JSON(data: response.data!)
-                
-           
                 let routes = json["routes"].arrayValue
-            
-            //Print Route using Polyline
-            
-                for route in routes {
-                    let routeOverviewPolyline = route ["overview_polyline"].dictionary
+                
+                
+                print(json)
+                
+                // print route using Polyline
+                for route in routes
+                {
+                    let routeOverviewPolyline = route["overview_polyline"].dictionary
                     let points = routeOverviewPolyline?["points"]?.stringValue
-                    let path = GMSPath.init(fromEncodedPath:points!)
+                    let path = GMSPath.init(fromEncodedPath: points!)
                     let polyline = GMSPolyline.init(path: path)
                     polyline.strokeWidth = 4
                     polyline.strokeColor = UIColor.red
@@ -161,7 +157,6 @@ class MapsViewController: UIViewController , GMSMapViewDelegate , CLLocationMana
             }
             
         }
-        
     }
     
     //Tapping Start Location will open the search function
@@ -199,9 +194,17 @@ class MapsViewController: UIViewController , GMSMapViewDelegate , CLLocationMana
     }
     
     @IBAction func showDirection(_ sender: UIButton) {
-        
+        let ref = Database.database().reference(fromURL: "https://share-a8ca4.firebaseio.com/")
+        let values = ["Origin": startLocation.text, "Destination": destinationLocation.text]
         //When Show Direction Button is tapped it will call drawpath function'
         self.drawPath(startLocation: locationStart, endLocation: locationEnd)
+        ref.child("travel").childByAutoId().setValue(values, withCompletionBlock: {(err,ref) in
+            if err != nil{
+                print(err?.localizedDescription as Any)
+                return
+            }
+            
+        })
     }
 }
 

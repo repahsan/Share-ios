@@ -50,6 +50,7 @@ class LoginController: UIViewController {
                 print(error?.localizedDescription as Any)
                 return
             }
+            self.performSegue(withIdentifier: "LoginSegue", sender: self)
         })
     }
     func createAlert(title:String,message:String)

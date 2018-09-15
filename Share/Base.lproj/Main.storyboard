@@ -201,6 +201,7 @@
                     </view>
                     <connections>
                         <outlet property="emailReset" destination="KFu-xf-vjj" id="0Wm-f6-J5F"/>
+                        <segue destination="44K-Rz-FAD" kind="show" identifier="LoginSegue" id="kkv-VG-Q4d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TCn-wQ-NTK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -338,7 +339,7 @@
                                 </constraints>
                                 <state key="normal" title="Starting "/>
                                 <connections>
-                                    <action selector="openStartLocation:" destination="mp4-Eh-gFL" eventType="touchUpInside" id="ugG-d2-7fw"/>
+                                    <action selector="openStartLocation:" destination="mp4-Eh-gFL" eventType="touchUpInside" id="9zt-0L-VnK"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Destination Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ah5-au-rAa">
@@ -352,6 +353,7 @@
                                 <state key="normal" title="Show Direction"/>
                                 <connections>
                                     <action selector="showDirection:" destination="mp4-Eh-gFL" eventType="touchDragInside" id="BH7-o5-tny"/>
+                                    <action selector="showDirection:" destination="mp4-Eh-gFL" eventType="touchUpInside" id="ydw-9i-xW9"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Start Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rre-0r-5tM">
@@ -364,7 +366,7 @@
                                 <rect key="frame" x="176" y="613" width="78" height="30"/>
                                 <state key="normal" title="Destination"/>
                                 <connections>
-                                    <action selector="openDestinationLocation:" destination="mp4-Eh-gFL" eventType="touchUpInside" id="SV0-e8-RiR"/>
+                                    <action selector="openDestinationLocation:" destination="mp4-Eh-gFL" eventType="touchUpInside" id="tdl-wb-teX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -390,9 +392,9 @@
                         <viewLayoutGuide key="safeArea" id="TjL-Ss-vcI"/>
                     </view>
                     <connections>
-                        <outlet property="destinationLocation" destination="ah5-au-rAa" id="Otk-uC-X2c"/>
-                        <outlet property="googleMaps" destination="UX3-aU-Wp6" id="4j3-mX-9Vf"/>
-                        <outlet property="startLocation" destination="rre-0r-5tM" id="GN0-dM-gF4"/>
+                        <outlet property="destinationLocation" destination="ah5-au-rAa" id="RPj-v7-By6"/>
+                        <outlet property="googleMaps" destination="UX3-aU-Wp6" id="8sB-DD-F2C"/>
+                        <outlet property="startLocation" destination="rre-0r-5tM" id="7SK-pa-Sdw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VLu-cj-Pca" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -401,6 +403,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="s0o-Th-tNL"/>
+        <segue reference="kkv-VG-Q4d"/>
     </inferredMetricsTieBreakers>
 </document>
