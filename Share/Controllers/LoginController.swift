@@ -32,13 +32,16 @@ class LoginController: UIViewController {
         return
         }
         Auth.auth().signIn(withEmail: email, password: password, completion: {(user,error) in
-            
+            let user = Auth.auth().currentUser
             if error != nil{
                 self.createAlert(title: "Wrong Email or Password", message: error?.localizedDescription as Any as! String)
                 self.PasswordTxtField.text = ""
                 return
+            }else if  (user?.isEmailVerified)!{
+                self.performSegue(withIdentifier: "ProfileSegue", sender: self)
+            }else{
+                self.createAlert(title: "Email not verified", message: "Please check your email")
             }
-            self.performSegue(withIdentifier: "ProfileSegue", sender: self)
         })
     }
     @IBAction func ResetPasswordAction(_ sender: UIButton) {
