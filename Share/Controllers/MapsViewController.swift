@@ -198,13 +198,12 @@ class MapsViewController: UIViewController , GMSMapViewDelegate , CLLocationMana
         let values = ["Origin": startLocation.text, "Destination": destinationLocation.text]
         //When Show Direction Button is tapped it will call drawpath function'
         self.drawPath(startLocation: locationStart, endLocation: locationEnd)
-        ref.child("travel").childByAutoId().setValue(values, withCompletionBlock: {(err,ref) in
-            if err != nil{
-                print(err?.localizedDescription as Any)
+        //ref.child("travel").childByAutoId().setValue(values, withCompletionBlock: {(err,ref) in
+            //if err != nil{
+                //print(err?.localizedDescription as Any)
                 return
-            }
-            
-        })
+            //}
+        //})
     }
 }
 

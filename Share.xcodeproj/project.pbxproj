@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		345AA157FF9993EA512AC986 /* Pods_Share.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F74E1FB687C0803B3E66E9B /* Pods_Share.framework */; };
+		401CDB7E2162EEFE00D8AE0A /* RoomInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401CDB7D2162EEFE00D8AE0A /* RoomInfoController.swift */; };
 		40A4C43E2142210000F398BE /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A4C43D2142210000F398BE /* ProfileController.swift */; };
+		40D0DEF5216294C800ECAED1 /* Join Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D0DEF4216294C800ECAED1 /* Join Room.swift */; };
+		40E8B7492157F07B00717992 /* RoomsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8B7482157F07B00717992 /* RoomsController.swift */; };
 		40E9AB692141734F001F662C /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E9AB682141734F001F662C /* LoginController.swift */; };
 		40FB4612213EDCA7006490C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FB4611213EDCA7006490C7 /* AppDelegate.swift */; };
 		40FB4614213EDCA7006490C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FB4613213EDCA7006490C7 /* ViewController.swift */; };
@@ -45,7 +48,10 @@
 		1685C0142213D7B12956BEF1 /* Pods-Share.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share.release.xcconfig"; path = "Pods/Target Support Files/Pods-Share/Pods-Share.release.xcconfig"; sourceTree = "<group>"; };
 		1F74E1FB687C0803B3E66E9B /* Pods_Share.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F1E7C3EE70D857F347A7701 /* Pods-ShareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShareTests/Pods-ShareTests.debug.xcconfig"; sourceTree = "<group>"; };
+		401CDB7D2162EEFE00D8AE0A /* RoomInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfoController.swift; sourceTree = "<group>"; };
 		40A4C43D2142210000F398BE /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		40D0DEF4216294C800ECAED1 /* Join Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Join Room.swift"; sourceTree = "<group>"; };
+		40E8B7482157F07B00717992 /* RoomsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsController.swift; sourceTree = "<group>"; };
 		40E9AB682141734F001F662C /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		40FB460E213EDCA7006490C7 /* Share.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Share.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40FB4611213EDCA7006490C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +123,9 @@
 				40E9AB682141734F001F662C /* LoginController.swift */,
 				40A4C43D2142210000F398BE /* ProfileController.swift */,
 				893CFE922142CBE800B8B792 /* MapsViewController.swift */,
+				40E8B7482157F07B00717992 /* RoomsController.swift */,
+				40D0DEF4216294C800ECAED1 /* Join Room.swift */,
+				401CDB7D2162EEFE00D8AE0A /* RoomInfoController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -427,10 +436,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				401CDB7E2162EEFE00D8AE0A /* RoomInfoController.swift in Sources */,
 				893CFE932142CBE800B8B792 /* MapsViewController.swift in Sources */,
 				40FB4614213EDCA7006490C7 /* ViewController.swift in Sources */,
 				40E9AB692141734F001F662C /* LoginController.swift in Sources */,
 				40FB4612213EDCA7006490C7 /* AppDelegate.swift in Sources */,
+				40E8B7492157F07B00717992 /* RoomsController.swift in Sources */,
+				40D0DEF5216294C800ECAED1 /* Join Room.swift in Sources */,
 				40A4C43E2142210000F398BE /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
