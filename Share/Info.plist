@@ -46,7 +46,7 @@
 			</dict>
 		</dict>
 	</array>
-	<key>UIViewEdgeAntialiasing</key>
+	<key>UIAppSupportsHDR</key>
 	<false/>
 </dict>
 </plist>

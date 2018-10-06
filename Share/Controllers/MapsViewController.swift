@@ -12,7 +12,6 @@ import GooglePlaces
 import SwiftyJSON
 import Alamofire
 import Firebase
-
 enum Location{
     case startLocation
     case destinationLocation
@@ -246,16 +245,4 @@ extension MapsViewController: GMSAutocompleteViewControllerDelegate{
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     
-}
-
-public extension UISearchBar{
-    
-    public func setTextColor(color: UIColor){
-        
-        let svs = subviews.flatMap { $0.subviews}
-        guard let tf = (svs.filter {$0 is UITextField }).first as? UITextField else { return }
-        
-        tf.textColor = color
-        
-    }
 }
