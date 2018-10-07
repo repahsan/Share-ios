@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Firebase
+var id = "";
 class RoomInfoController: UIViewController {
     @IBOutlet weak var Origin: UILabel!
     @IBOutlet weak var Destination: UILabel!
@@ -17,6 +18,7 @@ class RoomInfoController: UIViewController {
         // Do any additional setup after loading the view.
         Origin.text = orig[myindex]
         Destination.text = dest[myindex]
+        print(id)
     }
 
     override func didReceiveMemoryWarning() {

@@ -17,6 +17,7 @@ var numOfUser = [String]()
 var Fare = [String]()
 var myindex = 0
 class RoomsController: UITableViewController {
+    var roomId = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         ref.child("travel").queryOrdered(byChild: "Available").queryEqual(toValue: 1).observeSingleEvent(of: .value, with: {(snapshot) in
@@ -26,17 +27,17 @@ class RoomsController: UITableViewController {
             }
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
+                let roomid = snap.key
                 let dict = snap.value as! [String: Any]
                 let destination = dict["Destination"] as! String
                 let origin = dict["Origin"] as! String
-                let fare = dict["Fare"] as! Int
-                let NumOfUser = dict["NoOfUsers"] as! String
-                if(dict["Origin"] as! String == Origin && dict["Destination"] as! String == Destination){
+                    let fare = dict["Fare"] as! Int
+                    let NumOfUser = dict["NoOfUsers"] as! String
+                    self.roomId.append(roomid)
                     dest.append(destination)
                     orig.append(origin)
                     numOfUser.append(NumOfUser)
                     Fare.append(String(fare))
-                }
             }
             self.tableView.reloadData()
         })
@@ -51,25 +52,17 @@ class RoomsController: UITableViewController {
         return 1
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(dest.count >= 1){
             return dest.count
-        }else{
-            return 1;
-        }
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "healthyCell", for: indexPath)
-        if(dest.count >= 1){
             cell.textLabel?.text = "Destination:"+dest[indexPath.row]+",Origin:"+orig[indexPath.row]+",Fare:"+Fare[indexPath.row]+",Members:"+numOfUser[indexPath.row]
-            return cell
-        }else{
-            cell.textLabel?.text = "No rooms try and create one"
+            print(roomId[indexPath.row])
             return cell
         }
-    }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(dest[indexPath.row])
         myindex = indexPath.row
+        id = roomId[indexPath.row]
         performSegue(withIdentifier: "RoomSegue", sender: self)
     }
     // MARK: - Table view data source
