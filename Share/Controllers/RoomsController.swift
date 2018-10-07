@@ -20,6 +20,8 @@ class RoomsController: UITableViewController {
     var roomId = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(Origin)
+        print(Destination)
         ref.child("travel").queryOrdered(byChild: "Available").queryEqual(toValue: 1).observeSingleEvent(of: .value, with: {(snapshot) in
             if(dest.count != 0){
                 dest.removeAll()
@@ -56,8 +58,7 @@ class RoomsController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "healthyCell", for: indexPath)
-            cell.textLabel?.text = "Destination:"+dest[indexPath.row]+",Origin:"+orig[indexPath.row]+",Fare:"+Fare[indexPath.row]+",Members:"+numOfUser[indexPath.row]
-            print(roomId[indexPath.row])
+            cell.textLabel?.text = "Destination:"+dest[indexPath.row]+"\nOrigin:"+orig[indexPath.row]+"\nFare:"+Fare[indexPath.row]+"\nMembers:"+numOfUser[indexPath.row]
             return cell
         }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

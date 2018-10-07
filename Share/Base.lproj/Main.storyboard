@@ -478,21 +478,12 @@
                             </connections>
                         </button>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="healthyCell" textLabel="997-G7-7hn" style="IBUITableViewCellStyleDefault" id="6yf-JX-Rzt">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="healthyCell" rowHeight="106" id="6yf-JX-Rzt">
+                                <rect key="frame" x="0.0" y="72" width="375" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6yf-JX-Rzt" id="coc-vr-P7F">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="105.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Available Rooms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="997-G7-7hn">
-                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -507,7 +498,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KaT-wV-vH0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2722" y="-895"/>
+            <point key="canvasLocation" x="2720.8000000000002" y="-895.50224887556226"/>
         </scene>
         <!--Room Info Controller-->
         <scene sceneID="VdI-iM-WTc">
@@ -655,10 +646,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Sx9-Vo-zfn"/>
         <segue reference="IzJ-KD-74U"/>
         <segue reference="dlJ-Kv-ZoD"/>
-        <segue reference="ISC-us-3kn"/>
+        <segue reference="L3y-Eq-iXR"/>
         <segue reference="s0o-Th-tNL"/>
     </inferredMetricsTieBreakers>
 </document>

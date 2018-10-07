@@ -16,10 +16,11 @@ class CreateRoomController: UIViewController {
     
         let ref = Database.database().reference(fromURL: "https://share-a8ca4.firebaseio.com/")
         let refer = ref.child("travel").childByAutoId()
-        let id = refer.key
+        let romid = refer.key
         refer.setValue(["Available": 1,"Destination": Destination,"Origin": Origin,])
         let userId = Auth.auth().currentUser?.uid
-        ref.child("travel").child(id!).child("users").setValue(["Leader":userId])
+        ref.child("travel").child(romid!).child("users").setValue(["Leader":userId])
+        id = romid!
         // Do any additional setup after loading the view.
     }
 
