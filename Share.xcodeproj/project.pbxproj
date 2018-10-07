@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		345AA157FF9993EA512AC986 /* Pods_Share.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F74E1FB687C0803B3E66E9B /* Pods_Share.framework */; };
+		4013D604216A19E1004BF90B /* CreateRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4013D603216A19E1004BF90B /* CreateRoomController.swift */; };
 		401CDB7E2162EEFE00D8AE0A /* RoomInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401CDB7D2162EEFE00D8AE0A /* RoomInfoController.swift */; };
 		40A4C43E2142210000F398BE /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A4C43D2142210000F398BE /* ProfileController.swift */; };
 		40D0DEF5216294C800ECAED1 /* Join Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D0DEF4216294C800ECAED1 /* Join Room.swift */; };
@@ -48,6 +49,7 @@
 		1685C0142213D7B12956BEF1 /* Pods-Share.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share.release.xcconfig"; path = "Pods/Target Support Files/Pods-Share/Pods-Share.release.xcconfig"; sourceTree = "<group>"; };
 		1F74E1FB687C0803B3E66E9B /* Pods_Share.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F1E7C3EE70D857F347A7701 /* Pods-ShareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShareTests/Pods-ShareTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4013D603216A19E1004BF90B /* CreateRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomController.swift; sourceTree = "<group>"; };
 		401CDB7D2162EEFE00D8AE0A /* RoomInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfoController.swift; sourceTree = "<group>"; };
 		40A4C43D2142210000F398BE /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		40D0DEF4216294C800ECAED1 /* Join Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Join Room.swift"; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				40E8B7482157F07B00717992 /* RoomsController.swift */,
 				40D0DEF4216294C800ECAED1 /* Join Room.swift */,
 				401CDB7D2162EEFE00D8AE0A /* RoomInfoController.swift */,
+				4013D603216A19E1004BF90B /* CreateRoomController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4013D604216A19E1004BF90B /* CreateRoomController.swift in Sources */,
 				401CDB7E2162EEFE00D8AE0A /* RoomInfoController.swift in Sources */,
 				893CFE932142CBE800B8B792 /* MapsViewController.swift in Sources */,
 				40FB4614213EDCA7006490C7 /* ViewController.swift in Sources */,

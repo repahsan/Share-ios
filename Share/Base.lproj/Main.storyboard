@@ -277,6 +277,43 @@
             </objects>
             <point key="canvasLocation" x="130" y="72"/>
         </scene>
+        <!--Create Room Controller-->
+        <scene sceneID="zoD-Fl-X4L">
+            <objects>
+                <viewController id="t98-kf-tMd" customClass="CreateRoomController" customModule="Share" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cPY-aj-YPU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o71-fq-YbK">
+                                <rect key="frame" x="36" y="20" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="Ga5-4P-bbZ" kind="show" id="ISC-us-3kn"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Extra people" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7hU-gA-AeM">
+                                <rect key="frame" x="139" y="244" width="97" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="o71-fq-YbK" firstAttribute="top" secondItem="X9n-BG-34E" secondAttribute="top" id="3d2-pg-rww"/>
+                            <constraint firstItem="7hU-gA-AeM" firstAttribute="leading" secondItem="X9n-BG-34E" secondAttribute="leading" constant="139" id="Nop-sn-hbK"/>
+                            <constraint firstItem="o71-fq-YbK" firstAttribute="leading" secondItem="X9n-BG-34E" secondAttribute="leading" constant="36" id="TQK-O5-BN5"/>
+                            <constraint firstItem="7hU-gA-AeM" firstAttribute="centerX" secondItem="cPY-aj-YPU" secondAttribute="centerX" id="bBM-EO-A5i"/>
+                            <constraint firstItem="7hU-gA-AeM" firstAttribute="top" secondItem="X9n-BG-34E" secondAttribute="top" constant="224" id="cMX-1Q-VgE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="X9n-BG-34E"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H9C-XD-ytF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-204" y="-1084.4077961019491"/>
+        </scene>
         <!--Join Room-->
         <scene sceneID="7hB-Ct-fAC">
             <objects>
@@ -285,13 +322,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0i-0N-6nh">
-                                <rect key="frame" x="172" y="395" width="30" height="30"/>
-                                <state key="normal" title="Join"/>
-                                <connections>
-                                    <segue destination="Qrs-6c-NHt" kind="show" id="B0p-1h-l9z"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5z2-me-AEJ">
                                 <rect key="frame" x="160" y="143" width="36" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -325,21 +355,37 @@
                                     <segue destination="Zmn-iN-0PQ" kind="show" id="dlJ-Kv-ZoD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2k-13-dk7">
+                                <rect key="frame" x="241" y="398" width="46" height="30"/>
+                                <state key="normal" title="Create"/>
+                                <connections>
+                                    <segue destination="t98-kf-tMd" kind="show" id="Sx9-Vo-zfn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0i-0N-6nh">
+                                <rect key="frame" x="99" y="398" width="30" height="30"/>
+                                <state key="normal" title="Join"/>
+                                <connections>
+                                    <action selector="Join:" destination="Ga5-4P-bbZ" eventType="touchUpInside" id="Xa9-8c-7eY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5z2-me-AEJ" firstAttribute="leading" secondItem="Ebn-Jj-M8j" secondAttribute="leading" constant="160" id="3jq-CF-AzD"/>
-                            <constraint firstItem="x3G-2q-TP7" firstAttribute="leading" secondItem="Ebn-Jj-M8j" secondAttribute="leading" constant="37" id="A7O-Vk-RdL"/>
-                            <constraint firstItem="X0i-0N-6nh" firstAttribute="centerX" secondItem="a8u-N7-3Ft" secondAttribute="centerX" id="H0T-3y-Tr4"/>
-                            <constraint firstItem="Ebn-Jj-M8j" firstAttribute="trailing" secondItem="ssg-mI-YQc" secondAttribute="trailing" constant="56" id="I8B-Kz-Bg3"/>
-                            <constraint firstItem="5z2-me-AEJ" firstAttribute="leading" secondItem="4SL-KR-HK2" secondAttribute="leading" id="Lq0-Qc-p6R"/>
-                            <constraint firstItem="Pzs-RL-qHm" firstAttribute="leading" secondItem="Ebn-Jj-M8j" secondAttribute="leading" constant="65" id="NaQ-bb-K1r"/>
-                            <constraint firstItem="5z2-me-AEJ" firstAttribute="top" secondItem="Ebn-Jj-M8j" secondAttribute="top" constant="123" id="WeZ-ut-cz4"/>
-                            <constraint firstItem="Pzs-RL-qHm" firstAttribute="baseline" secondItem="ssg-mI-YQc" secondAttribute="baseline" id="Zra-Df-VRb"/>
-                            <constraint firstItem="4SL-KR-HK2" firstAttribute="top" secondItem="5z2-me-AEJ" secondAttribute="bottom" constant="40" id="bFV-qe-RWm"/>
-                            <constraint firstItem="Ebn-Jj-M8j" firstAttribute="bottom" secondItem="X0i-0N-6nh" secondAttribute="bottom" constant="242" id="cZT-pf-TtK"/>
-                            <constraint firstItem="Pzs-RL-qHm" firstAttribute="centerY" secondItem="a8u-N7-3Ft" secondAttribute="centerY" id="lLl-5A-25q"/>
-                            <constraint firstItem="x3G-2q-TP7" firstAttribute="top" secondItem="Ebn-Jj-M8j" secondAttribute="top" constant="39" id="njw-24-2sd"/>
+                            <constraint firstItem="x3G-2q-TP7" firstAttribute="top" secondItem="Ebn-Jj-M8j" secondAttribute="top" constant="39" id="80d-dp-VIf"/>
+                            <constraint firstItem="Ebn-Jj-M8j" firstAttribute="trailing" secondItem="ssg-mI-YQc" secondAttribute="trailing" constant="56" id="BSt-Qy-ofM"/>
+                            <constraint firstItem="ssg-mI-YQc" firstAttribute="leading" secondItem="n2k-13-dk7" secondAttribute="leading" id="BpU-oe-YCD"/>
+                            <constraint firstItem="X0i-0N-6nh" firstAttribute="leading" secondItem="Ebn-Jj-M8j" secondAttribute="leading" constant="99" id="IP0-Ff-bdL"/>
+                            <constraint firstItem="4SL-KR-HK2" firstAttribute="top" secondItem="5z2-me-AEJ" secondAttribute="bottom" constant="40" id="LXc-kh-0nX"/>
+                            <constraint firstItem="5z2-me-AEJ" firstAttribute="leading" secondItem="Ebn-Jj-M8j" secondAttribute="leading" constant="160" id="Son-mY-QRl"/>
+                            <constraint firstItem="X0i-0N-6nh" firstAttribute="top" secondItem="Ebn-Jj-M8j" secondAttribute="top" constant="378" id="THc-hX-5t9"/>
+                            <constraint firstItem="Pzs-RL-qHm" firstAttribute="centerY" secondItem="a8u-N7-3Ft" secondAttribute="centerY" id="Tqu-63-fDe"/>
+                            <constraint firstItem="5z2-me-AEJ" firstAttribute="leading" secondItem="4SL-KR-HK2" secondAttribute="leading" id="WMh-4r-iVV"/>
+                            <constraint firstItem="Pzs-RL-qHm" firstAttribute="leading" secondItem="Ebn-Jj-M8j" secondAttribute="leading" constant="65" id="bBv-jm-jch"/>
+                            <constraint firstItem="x3G-2q-TP7" firstAttribute="leading" secondItem="Ebn-Jj-M8j" secondAttribute="leading" constant="37" id="knC-3L-A2B"/>
+                            <constraint firstItem="X0i-0N-6nh" firstAttribute="baseline" secondItem="n2k-13-dk7" secondAttribute="baseline" id="lO3-Yl-WDf"/>
+                            <constraint firstItem="5z2-me-AEJ" firstAttribute="top" secondItem="Ebn-Jj-M8j" secondAttribute="top" constant="123" id="mAV-Dc-f4d"/>
+                            <constraint firstItem="Pzs-RL-qHm" firstAttribute="baseline" secondItem="ssg-mI-YQc" secondAttribute="baseline" id="whh-wU-L07"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ebn-Jj-M8j"/>
                     </view>
@@ -348,6 +394,7 @@
                         <outlet property="destinationLocation" destination="ssg-mI-YQc" id="yBS-90-8p1"/>
                         <outlet property="startLabel" destination="5z2-me-AEJ" id="H7L-Ks-ehe"/>
                         <outlet property="startLocation" destination="Pzs-RL-qHm" id="X4i-Rh-Zz5"/>
+                        <segue destination="Qrs-6c-NHt" kind="show" identifier="JoinSegue" id="IzJ-KD-74U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nWM-WW-r5l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -608,9 +655,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="B0p-1h-l9z"/>
-        <segue reference="GSH-jJ-bp2"/>
-        <segue reference="L3y-Eq-iXR"/>
+        <segue reference="Sx9-Vo-zfn"/>
+        <segue reference="IzJ-KD-74U"/>
+        <segue reference="dlJ-Kv-ZoD"/>
+        <segue reference="ISC-us-3kn"/>
         <segue reference="s0o-Th-tNL"/>
     </inferredMetricsTieBreakers>
 </document>

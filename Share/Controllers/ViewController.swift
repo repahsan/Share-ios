@@ -81,7 +81,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                     return
                 }
                 let ref = Database.database().reference(fromURL: "https://share-a8ca4.firebaseio.com/")
-                let values = ["Fname": Fname, "Lname": Lname, "Gender": Gender, "Contact Number": Contact,"Emergency Contract": EmergencyContact,"Pin":0] as [String : Any]
+                let values = ["Fname": Fname, "Lname": Lname, "Gender": Gender, "Contact Number": Contact,"Emergency Contact": EmergencyContact,"Pin":0] as [String : Any]
                 let uid = Auth.auth().currentUser?.uid
                 Auth.auth().currentUser?.sendEmailVerification(completion: {(error) in
                     if error != nil {

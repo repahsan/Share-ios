@@ -31,10 +31,12 @@ class RoomsController: UITableViewController {
                 let origin = dict["Origin"] as! String
                 let fare = dict["Fare"] as! Int
                 let NumOfUser = dict["NoOfUsers"] as! String
-                dest.append(destination)
-                orig.append(origin)
-                numOfUser.append(NumOfUser)
-                Fare.append(String(fare))
+                if(dict["Origin"] as! String == Origin && dict["Destination"] as! String == Destination){
+                    dest.append(destination)
+                    orig.append(origin)
+                    numOfUser.append(NumOfUser)
+                    Fare.append(String(fare))
+                }
             }
             self.tableView.reloadData()
         })
@@ -49,13 +51,21 @@ class RoomsController: UITableViewController {
         return 1
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(dest.count)
-        return dest.count
+        if(dest.count >= 1){
+            return dest.count
+        }else{
+            return 1;
+        }
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "healthyCell", for: indexPath)
-        cell.textLabel?.text = "Destination:"+dest[indexPath.row]+",Origin:"+orig[indexPath.row]+",Fare:"+Fare[indexPath.row]+",Members:"+numOfUser[indexPath.row]
-        return cell
+        if(dest.count >= 1){
+            cell.textLabel?.text = "Destination:"+dest[indexPath.row]+",Origin:"+orig[indexPath.row]+",Fare:"+Fare[indexPath.row]+",Members:"+numOfUser[indexPath.row]
+            return cell
+        }else{
+            cell.textLabel?.text = "No rooms try and create one"
+            return cell
+        }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(dest[indexPath.row])

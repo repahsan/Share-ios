@@ -11,6 +11,8 @@ import Firebase
 import GoogleMaps
 import GooglePlaces
 import SwiftyJSON
+var Origin = "";
+var Destination = "";
 class Join_Room: UIViewController ,GMSMapViewDelegate , CLLocationManagerDelegate {
     @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var startLabel: UILabel!
@@ -47,6 +49,7 @@ class Join_Room: UIViewController ,GMSMapViewDelegate , CLLocationManagerDelegat
         self.locationManager.stopUpdatingLocation()
         
         self.present(autoCompleteController, animated: true, completion: nil)
+        
     }
     //selecting destination
     @IBAction func openDestinationLocation(_ sender: UIButton){
@@ -63,7 +66,10 @@ class Join_Room: UIViewController ,GMSMapViewDelegate , CLLocationManagerDelegat
         
         self.present(autoCompleteController, animated: true, completion: nil)
     }
-
+    @IBAction func Join(_ sender: UIButton) {
+        performSegue(withIdentifier: "JoinSegue", sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -82,9 +88,11 @@ extension Join_Room: GMSAutocompleteViewControllerDelegate{
         if locationSelected == .startLocation{
             startLabel.text = "\(place.name)"
             locationStart = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+            Origin = startLabel.text!
         }else{
             destinationLabel.text = "\(place.name)"
             locationEnd = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+            Destination = destinationLabel.text!
         }
         self.dismiss(animated: true, completion: nil)
     }
