@@ -11,8 +11,9 @@ import Firebase
 import GoogleMaps
 import GooglePlaces
 import SwiftyJSON
-var Origin = "";
-var Destination = "";
+var Origin = ""
+var Destination = ""
+var action = "Create"
 class Join_Room: UIViewController ,GMSMapViewDelegate , CLLocationManagerDelegate {
     @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var startLabel: UILabel!
@@ -67,6 +68,7 @@ class Join_Room: UIViewController ,GMSMapViewDelegate , CLLocationManagerDelegat
         self.present(autoCompleteController, animated: true, completion: nil)
     }
     @IBAction func Join(_ sender: UIButton) {
+        action = "Join"
         performSegue(withIdentifier: "JoinSegue", sender: self)
     }
     

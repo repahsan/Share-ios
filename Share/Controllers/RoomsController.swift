@@ -22,28 +22,7 @@ class RoomsController: UITableViewController {
         super.viewDidLoad()
         print(Origin)
         print(Destination)
-        ref.child("travel").queryOrdered(byChild: "Available").queryEqual(toValue: 1).observeSingleEvent(of: .value, with: {(snapshot) in
-            if(dest.count != 0){
-                dest.removeAll()
-                orig.removeAll()
-            }
-            for child in snapshot.children {
-                let snap = child as! DataSnapshot
-                let roomid = snap.key
-                let dict = snap.value as! [String: Any]
-                let destination = dict["Destination"] as! String
-                let origin = dict["Origin"] as! String
-                    let fare = dict["Fare"] as! Int
-                    let NumOfUser = dict["NoOfUsers"] as! String
-                    self.roomId.append(roomid)
-                    dest.append(destination)
-                    orig.append(origin)
-                    numOfUser.append(NumOfUser)
-                    Fare.append(String(fare))
-            }
-            self.tableView.reloadData()
-        })
-        
+        getRooms()
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,6 +44,31 @@ class RoomsController: UITableViewController {
         myindex = indexPath.row
         id = roomId[indexPath.row]
         performSegue(withIdentifier: "RoomSegue", sender: self)
+    }
+    func getRooms(){
+        if action == "Join"{
+        ref.child("travel").queryOrdered(byChild: "Available").queryEqual(toValue: 1).observe( .value, with: {(snapshot) in
+            if(dest.count != 0){
+                dest.removeAll()
+                orig.removeAll()
+            }
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                let roomid = snap.key
+                let dict = snap.value as! [String: Any]
+                let destination = dict["Destination"] as! String
+                let origin = dict["Origin"] as! String
+                let fare = dict["Fare"] as! Int
+                let NumOfUser = dict["NoOfUsers"] as! String
+                self.roomId.append(roomid)
+                dest.append(destination)
+                orig.append(origin)
+                numOfUser.append(NumOfUser)
+                Fare.append(String(fare))
+            }
+            self.tableView.reloadData()
+        })
+        }
     }
     // MARK: - Table view data source
 

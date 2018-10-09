@@ -10,6 +10,11 @@ import UIKit
 import Firebase
 
 class ProfileController: UIViewController {
+    @IBOutlet weak var emergencyNumlabel: UILabel!
+    @IBOutlet weak var contactNumlabel: UILabel!
+    @IBOutlet weak var genderlabel: UILabel!
+    @IBOutlet weak var lastNamelabel: UILabel!
+    @IBOutlet weak var firstNamelabel: UILabel!
     let ref = Database.database().reference(fromURL: "https://share-a8ca4.firebaseio.com/")
     let id = Auth.auth().currentUser?.uid
     @IBOutlet weak var button : UIButton!
@@ -20,9 +25,13 @@ class ProfileController: UIViewController {
         ref.child("users").child(id!).observeSingleEvent(of: .value, with: {(snapshot) in
             let value = snapshot.value as? NSDictionary
             let pin = value?["Pin"] as? Int
-            print(pin as Any)
+            self.firstNamelabel.text = value?["Fname"] as? String
+            self.lastNamelabel.text = value?["Lname"] as? String
+            self.genderlabel.text = value?["Gender"] as? String
+            self.contactNumlabel.text = value?["Contact Number"] as? String
+            self.emergencyNumlabel.text = value?["Emergency Contact"] as? String
             if(pin == 0){
-                
+                self.createAlert()
             }
         }){(error) in
             print(error.localizedDescription)
@@ -48,12 +57,16 @@ class ProfileController: UIViewController {
         }
         
     }
-    func createAlert(title:String,message:String)
+    func createAlert()
     {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
-        let subButton = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
-        alert.addAction(subButton)
-        self.present(alert, animated: true, completion: nil)
+        let alertController = UIAlertController(title: "Enter 4 digit pin number", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addTextField { (textField : UITextField!) -> Void in
+        }
+        let saveAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.default, handler: { alert -> Void in
+            let pin = Int(alertController.textFields![0].text!)
+            self.ref.child("users").child(self.id!).updateChildValues(["Pin" : pin as Any])
+        })
+        alertController.addAction(saveAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
